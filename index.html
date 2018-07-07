@@ -26,7 +26,7 @@
         <div class="container">
             <div class="row mt-4">
                 <div class="col-md-9">
-                    <input id="searchbox" type="text" class="form-control" placeholder="Arama...">
+                    <input id="searchbox" type="text" class="form-control" placeholder="Arama..." autofocus>
                 </div>
                 <div class="col-md-3">
                     <button id="myBtn" type="submit" class="btn btn-primary btn-block">Ara</button>
@@ -69,7 +69,10 @@
 
                 var q = document.getElementById('searchbox').value;
                 
-                var apiLink = 'https://cors-anywhere.herokuapp.com/http://www.omdbapi.com/?apikey=2451f53d&s=' + q;
+                //var apiLink = 'http://www.omdbapi.com/?apikey=2451f53d&s=' + q; 
+
+                //GitHub http bypass için kullanılan link 
+                var apiLink = 'https://cors-anywhere.herokuapp.com/http://www.omdbapi.com/?apikey=2451f53d&s=' + q; 
 
                 $.getJSON(apiLink, function (result) {
 
