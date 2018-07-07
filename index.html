@@ -29,7 +29,7 @@
                     <input id="searchbox" type="text" class="form-control" placeholder="Arama...">
                 </div>
                 <div class="col-md-3">
-                    <button type="submit" class="btn btn-primary btn-block">Ara</button>
+                    <button id="myBtn" type="submit" class="btn btn-primary btn-block">Ara</button>
                 </div>
             </div>
 
@@ -53,6 +53,15 @@
         crossorigin="anonymous"></script>
 
     <script>
+
+        var input = document.getElementById("searchbox");
+        input.addEventListener("keyup", function (event) {
+            event.preventDefault();
+            if (event.keyCode === 13) {
+                document.getElementById("myBtn").click();
+            }
+        });
+
         $(document).ready(function () {
             $("button").click(function () {
                 var listGroup = document.getElementById('list-tab');
