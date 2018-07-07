@@ -68,8 +68,10 @@
                 listGroup.innerHTML = "";
 
                 var q = document.getElementById('searchbox').value;
+                
+                var apiLink = 'https://cors-anywhere.herokuapp.com/http://www.omdbapi.com/?apikey=2451f53d&s=' + q;
 
-                $.getJSON('http://www.omdbapi.com/?apikey=2451f53d&s=' + q, function (result) {
+                $.getJSON(apiLink, function (result) {
 
                     if (result.Response === 'False') return;
 
